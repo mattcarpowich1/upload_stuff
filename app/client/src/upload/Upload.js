@@ -31,7 +31,7 @@ const Upload = () => {
 
   const sendRequest = file => {
     return new Promise((resolve, reject) => {
-      const req = new XMLHttpRequest();
+      const req = new XMLHttpRequest()
 
       req.upload.addEventListener('progress', event => {
         if (event.lengthComputable) {

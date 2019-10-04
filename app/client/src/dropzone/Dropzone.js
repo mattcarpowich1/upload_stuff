@@ -46,7 +46,6 @@ class Dropzone extends Component {
         hover: false
       })
     }
-    return
   }
 
   handleOpenFileDialog () {
