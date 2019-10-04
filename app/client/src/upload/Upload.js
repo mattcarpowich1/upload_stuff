@@ -21,7 +21,7 @@ const Upload = () => {
       await Promise.all(promises)
 
       changeSuccessfullyUploaded(true)
-      changeUploadingStatus(true)
+      changeUploadingStatus(false)
     } catch (e) {
       changeSuccessfullyUploaded(false)
       changeUploadingStatus(false)
@@ -90,7 +90,7 @@ const Upload = () => {
             src={check}
             style={{
               opacity: progress && progress.state === 'done'
-                ? 0.5
+                ? 1
                 : 0
             }}
           />
@@ -112,14 +112,14 @@ const Upload = () => {
         </button>
       ) : (
         <button
-          disabled={files.length < 0 || uploading}
+          disabled={files.length <= 0 || uploading}
           onClick={uploadFiles}
         >
           Upload
         </button>
       )
   )
-  console.log(uploadProgress)
+
   return (
     <div className='upload'>
       <span className='title'>Upload Files</span>
@@ -127,6 +127,7 @@ const Upload = () => {
         <div>
           <Dropzone
             onFilesAdded={newFiles => handleFilesAdded([...files, ...newFiles])}
+            disabled={uploading || successfullyUploaded}
           />
         </div>
         <div className='files'>

@@ -19,9 +19,12 @@ class Dropzone extends Component {
 
   handleDragOver (e) {
     this.stopEvent(e)
-    this.setState({
-      hover: true
-    })
+    const { disabled } = this.props
+    if (!disabled) {
+      this.setState({
+        hover: true
+      })
+    }
   }
 
   handleDragLeave (e) {
@@ -34,12 +37,16 @@ class Dropzone extends Component {
   handleDrop (e) {
     this.stopEvent(e)
 
-    const { onFilesAdded } = this.props
-    const { files } = e.dataTransfer
-    onFilesAdded(this.fileListToArray(files))
-    this.setState({
-      hover: false
-    })
+    const { disabled } = this.props
+    if (!disabled) {
+      const { onFilesAdded } = this.props
+      const { files } = e.dataTransfer
+      onFilesAdded(this.fileListToArray(files))
+      this.setState({
+        hover: false
+      })
+    }
+    return
   }
 
   handleOpenFileDialog () {
@@ -63,6 +70,7 @@ class Dropzone extends Component {
 
   render () {
     const { hover } = this.state
+    const { disabled } = this.props
     const {
       handleOpenFileDialog,
       handleOnFilesAdded,
