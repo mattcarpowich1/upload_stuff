@@ -17,7 +17,7 @@ services:
     volumes:
       - certs:/etc/letsencrypt
       - certs_data:/data/letsencrypt
-    command: "certonly --webroot --webroot-path=/data/letsencrypt --renew-by-default -d mattcarpowich.com --email mattcarpowich@gmail.com --agree-tos --no-eff-email --non-interactive"
+    command: "certonly --webroot --webroot-path=/data/letsencrypt --renew-by-default -d babydrop.zone --email mattcarpowich@gmail.com --agree-tos --no-eff-email --non-interactive"
 
 volumes:
   backend:
