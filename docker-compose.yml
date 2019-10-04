@@ -1,7 +1,7 @@
 version: '3.2'
 services: 
-  backend:
-    build: ./app
+  # backend:
+  #   build: ./app
 
   nginx:
     build: ./web-server
@@ -12,12 +12,12 @@ services:
       - certs:/etc/letsencrypt
       - certs_data:/data/letsencrypt
 
-  # letsencrypt:
-  #   image: deliverous/certbot
-  #   volumes:
-  #     - certs:/etc/letsencrypt
-  #     - certs_data:/data/letsencrypt
-  #   command: "certonly --webroot --webroot-path=/data/letsencrypt --renew-by-default -d mattcarpowich.com --email mattcarpowich@gmail.com --agree-tos --no-eff-email --non-interactive"
+  letsencrypt:
+    image: deliverous/certbot
+    volumes:
+      - certs:/etc/letsencrypt
+      - certs_data:/data/letsencrypt
+    command: "certonly --webroot --webroot-path=/data/letsencrypt --renew-by-default -d mattcarpowich.com --email mattcarpowich@gmail.com --agree-tos --no-eff-email --non-interactive"
 
 volumes:
   backend:
