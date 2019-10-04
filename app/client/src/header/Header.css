@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  padding: 24px;
+  padding-left: 48px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #232323;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+}
+
+.header h1 {
+  color: #ff63fa;
+  font-size: 48px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  margin-left: 24px;
+}
+
+.header img {
+  height: 72px;
+  width: auto;
+}

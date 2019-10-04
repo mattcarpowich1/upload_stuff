@@ -1,6 +1,6 @@
 .drop-zone-container {
   width: 100%;
-  height: 4rem;
+  height: 18rem;
   background-color: #e4e4e4;
   color: #8a8a8a;
   display: flex;
@@ -26,4 +26,21 @@
 
 .drop-zone-container input {
   display: none;
+}
+
+.drag-files {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.drag-files img {
+  height: 48px;
+  width: auto
+}
+
+.drag-files h3 {
+  font-size: 18px;
+  margin-top: 16px;
 }

@@ -1,5 +1,6 @@
 // basic dropzone component courtesy of https://medium.com/quick-code/how-to-create-file-dropzone-component-with-react-41e5f958d3f2
 import React, { Component } from 'react'
+import uploadCloud from './image/upload-cloud.svg'
 import './Dropzone.css'
 
 class Dropzone extends Component {
@@ -92,7 +93,10 @@ class Dropzone extends Component {
           onChange={handleOnFilesAdded}
         />
         <div className='drag-files'>
-          Drag files to upload
+          <img src={uploadCloud} alt='upload' />
+          <h3>
+            Drag files to upload
+          </h3>
         </div>
       </div>
     )

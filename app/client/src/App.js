@@ -1,12 +1,16 @@
 import React from 'react'
+import Header from './header'
 import './App.css'
 import Upload from './upload'
 
 const App = () => {
   return (
     <div className='App'>
-      <div className='card'>
-        <Upload />
+      <Header />
+      <div className='main'>
+        <div className='card'>
+          <Upload />
+        </div>
       </div>
     </div>
   )
